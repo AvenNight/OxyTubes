@@ -5,15 +5,12 @@ using UnityEngine;
 public class SceneController : MonoBehaviour
 {
     public SceneCreator sceneCreator;
+    public Vector2 ZeroPos;
+    public Vector2 TileSize;
+    public char[,] CurLevel = Levels.Level3;
 
     private void OnEnable()
     {
-        //sceneCreator.CreateScene(Levels.Level1);
-        sceneCreator.CreateScene(Levels.Level2);
-    }
-
-    public void OnClick(Tile tile)
-    {
-        Debug.Log($"{tile.TileType}");
+        sceneCreator.CreateScene(CurLevel);
     }
 }

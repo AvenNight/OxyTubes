@@ -16,11 +16,16 @@ public class SceneCreator : MonoBehaviour
     public Tile Empty;
     public Tile Wall;
 
+    //public static Vector2 ZeroPos = new Vector2(-1000 , -400);
+    //public static Vector2 ScrollPos = new Vector2(700 , 200);
+    //public static Vector2 ScrollBoundsMin = new Vector2(500 , -500);
+    //public static Vector2 ScrollBoundsMax = new Vector2(900 , 500);
+
     public void CreateScene(char [,] map)
     {
-        Debug.Log($"{step}");
+        //Debug.Log($"{step}");
 
-        var curPos = new Vector2(0, 0);
+        var curPos = new Vector2(-1000 , -400);
 
 
         GameObject cur;
@@ -56,9 +61,9 @@ public class SceneCreator : MonoBehaviour
                 curPos.x += tile.Sprite.width;
 
 
-                Debug.Log($"{x} {y}");
+                //Debug.Log($"{x} {y}");
             }
-            curPos.x = 0;
+            curPos.x = -1000;
             curPos.y += tile.Sprite.height;
         }
     }

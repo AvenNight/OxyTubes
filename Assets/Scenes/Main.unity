@@ -216,7 +216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908207662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -781, y: -402, z: 0}
+  m_LocalPosition: {x: 700, y: 200, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1069688263}
@@ -234,8 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a8bdb82409049842addac407886d25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
-  TileType: 3
 --- !u!65 &908207665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -247,7 +245,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 300, y: 200, z: 0}
+  m_Size: {x: 100, y: 100, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &908207666
 MonoBehaviour:
@@ -312,14 +310,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 300
-  mHeight: 200
+  mWidth: 100
+  mHeight: 100
   mDepth: 100
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.5
+  aspectRatio: 1
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -822,13 +820,13 @@ PrefabInstance:
         type: 3}
       propertyPath: Wall
       value: 
-      objectReference: {fileID: 496538207404318487, guid: 1b3e86be3b0f4204db2bde3f9e28ef98,
+      objectReference: {fileID: 8019898057209481522, guid: 1b3e86be3b0f4204db2bde3f9e28ef98,
         type: 3}
     - target: {fileID: 2035341347321246042, guid: 8045f814fc11d6d4cadb1a5edd51ded8,
         type: 3}
       propertyPath: Empty
       value: 
-      objectReference: {fileID: 496538207404318487, guid: 68c429b4436e95349a7b908f654dd6f8,
+      objectReference: {fileID: 9005542636008792566, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
     - target: {fileID: 2035341347321246042, guid: 8045f814fc11d6d4cadb1a5edd51ded8,
         type: 3}

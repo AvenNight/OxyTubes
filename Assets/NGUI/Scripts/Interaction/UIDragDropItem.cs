@@ -50,6 +50,7 @@ public class UIDragDropItem : MonoBehaviour
 
 	public Action OnStartDrag;
 	public Action OnEndDrag;
+	public Action OnProcessDrag;
 
 #region Common functionality
 
@@ -315,6 +316,7 @@ public class UIDragDropItem : MonoBehaviour
 	protected virtual void OnDragDropMove (Vector2 delta)
 	{
 		mTrans.localPosition += mTrans.InverseTransformDirection((Vector3)delta);
+		OnProcessDrag?.Invoke();
 	}
 
 	/// <summary>
