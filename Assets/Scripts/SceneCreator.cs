@@ -9,7 +9,7 @@ public class SceneCreator : MonoBehaviour
 
     public void CreateScene(char [,] map)
     {
-        var curPos = new Vector2(0, 0);
+        var curPos = new Vector2(-1000 , -400);
 
         Tile tile = null;
 
@@ -21,7 +21,7 @@ public class SceneCreator : MonoBehaviour
                 tile.transform.localPosition = curPos;
                 curPos.x += tile.Sprite.width;
             }
-            curPos.x = 0;
+            curPos.x = -1000;
             curPos.y += tile.Sprite.height;
         }
     }
