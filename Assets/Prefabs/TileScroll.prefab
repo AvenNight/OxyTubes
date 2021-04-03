@@ -296,8 +296,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layout: {fileID: 4004656627422951897}
   scrollView: {fileID: 4004656627052939775}
-  Empty: {fileID: 802847330243327680, guid: 631de30cc9ee68a4f868a5d0b2913036, type: 3}
-  Wall: {fileID: 1714166241512560088, guid: 6086651d56df0d24c9f6f26b0404694b, type: 3}
+  Empty: {fileID: 8158933638709774369, guid: 631de30cc9ee68a4f868a5d0b2913036, type: 3}
+  Wall: {fileID: 7915043992693943097, guid: 6086651d56df0d24c9f6f26b0404694b, type: 3}
 --- !u!1 &4004656627422951898
 GameObject:
   m_ObjectHideFlags: 0
