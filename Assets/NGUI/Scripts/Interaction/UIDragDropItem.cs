@@ -6,6 +6,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 /// <summary>
 /// UIDragDropItem is a base script for your own Drag & Drop operations.
@@ -46,6 +47,9 @@ public class UIDragDropItem : MonoBehaviour
 	/// </summary>
 
 	public bool interactable = true;
+
+	public Action OnStartDrag;
+	public Action OnEndDrag;
 
 #region Common functionality
 
@@ -268,6 +272,8 @@ public class UIDragDropItem : MonoBehaviour
 		if (!draggedItems.Contains(this))
 			draggedItems.Add(this);
 
+		OnStartDrag?.Invoke();
+
 		// Automatically disable the scroll view
 		if (mDragScrollView != null) mDragScrollView.enabled = false;
 
@@ -371,7 +377,11 @@ public class UIDragDropItem : MonoBehaviour
 	/// Function called when the object gets reparented after the drop operation finishes.
 	/// </summary>
 
-	protected virtual void OnDragDropEnd () { draggedItems.Remove(this); }
+	protected virtual void OnDragDropEnd () 
+	{
+		OnEndDrag?.Invoke();
+		draggedItems.Remove(this); 
+	}
 
 	/// <summary>
 	/// Re-enable the drag scroll view script at the end of the frame.

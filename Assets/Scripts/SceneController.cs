@@ -11,4 +11,9 @@ public class SceneController : MonoBehaviour
         //sceneCreator.CreateScene(Levels.Level1);
         sceneCreator.CreateScene(Levels.Level2);
     }
+
+    public void OnClick(Tile tile)
+    {
+        Debug.Log($"{tile.TileType}");
+    }
 }

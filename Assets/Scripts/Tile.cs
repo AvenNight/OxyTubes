@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public enum TileType
 {
@@ -8,11 +9,27 @@ public enum TileType
     OxyGenerator
 }
 
+[RequireComponent(typeof(UIDragDropItem))]
 public class Tile : MonoBehaviour
 {
     public UI2DSprite Sprite;
     public TileType TileType;
-    //public Vector2 Position;
 
-    
+    private UIDragDropItem dd => this.GetComponent<UIDragDropItem>();
+
+    public void Start()
+    {
+        dd.OnStartDrag += OnStartDrag;
+        dd.OnEndDrag += OnEndDrag;
+    }
+
+    private void OnStartDrag()
+    {
+        Debug.Log("Start drag");
+    }
+
+    private void OnEndDrag()
+    {
+        Debug.Log("End drag");
+    }
 }
