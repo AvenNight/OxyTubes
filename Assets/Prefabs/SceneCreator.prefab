@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b6a2155e7dc0d48b6c3195bff1492d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Empty1: {fileID: 0}
   MapRoot: {fileID: 0}
-  Empty: {fileID: 0}
-  Wall: {fileID: 0}
+  Empty: {fileID: 496538207404318487, guid: 68c429b4436e95349a7b908f654dd6f8, type: 3}
+  Wall: {fileID: 496538207404318487, guid: 1b3e86be3b0f4204db2bde3f9e28ef98, type: 3}

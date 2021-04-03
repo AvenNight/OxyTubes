@@ -1,36 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1105970110165420253
+--- !u!114 &3279803470750802637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8635394570956094697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bdabd91c9ce6144699c557f2698689e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sizeWidget: {fileID: 1721583475134883049}
+  DontShrinkIfInactiveInHierarchy: 0
+--- !u!1001 &990870785528195543
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 496538207404318487, guid: 68c429b4436e95349a7b908f654dd6f8,
+    - target: {fileID: 994451119333456577, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
-      propertyPath: TileType
+      propertyPath: m_Size.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 994451119333456577, guid: 68c429b4436e95349a7b908f654dd6f8,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 994451119333456577, guid: 68c429b4436e95349a7b908f654dd6f8,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625470605811278566, guid: 68c429b4436e95349a7b908f654dd6f8,
+        type: 3}
+      propertyPath: cloneOnDrag
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410206695096265762, guid: 68c429b4436e95349a7b908f654dd6f8,
-        type: 3}
-      propertyPath: mColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410206695096265762, guid: 68c429b4436e95349a7b908f654dd6f8,
-        type: 3}
-      propertyPath: mColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4410206695096265762, guid: 68c429b4436e95349a7b908f654dd6f8,
-        type: 3}
-      propertyPath: mColor.r
-      value: 0.26415092
       objectReference: {fileID: 0}
     - target: {fileID: 8797590724222965054, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
       propertyPath: m_Name
-      value: Wall
+      value: TyleMoveEmpty
       objectReference: {fileID: 0}
     - target: {fileID: 9043662285795674229, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
@@ -60,17 +74,17 @@ PrefabInstance:
     - target: {fileID: 9043662285795674229, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9043662285795674229, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9043662285795674229, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9043662285795674229, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
@@ -89,3 +103,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68c429b4436e95349a7b908f654dd6f8, type: 3}
+--- !u!1 &8635394570956094697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8797590724222965054, guid: 68c429b4436e95349a7b908f654dd6f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 990870785528195543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1721583475134883049 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1883644521500151102, guid: 68c429b4436e95349a7b908f654dd6f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 990870785528195543}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a20c1b21a3f94bb5b2d3b901c9aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

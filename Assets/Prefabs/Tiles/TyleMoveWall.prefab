@@ -1,6 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1105970110165420253
+--- !u!114 &5438956744525002719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7726679313364819953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bdabd91c9ce6144699c557f2698689e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sizeWidget: {fileID: 795434494685104113}
+  DontShrinkIfInactiveInHierarchy: 0
+--- !u!1001 &1237926686569056975
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,6 +25,21 @@ PrefabInstance:
         type: 3}
       propertyPath: TileType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 994451119333456577, guid: 68c429b4436e95349a7b908f654dd6f8,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 994451119333456577, guid: 68c429b4436e95349a7b908f654dd6f8,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 994451119333456577, guid: 68c429b4436e95349a7b908f654dd6f8,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4410206695096265762, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
@@ -25,17 +54,37 @@ PrefabInstance:
     - target: {fileID: 4410206695096265762, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
       propertyPath: mColor.r
-      value: 0.26415092
+      value: 0.2924528
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625470605811278566, guid: 68c429b4436e95349a7b908f654dd6f8,
+        type: 3}
+      propertyPath: cloneOnDrag
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8797590724222965054, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
       propertyPath: m_Name
-      value: Wall
+      value: TyleMoveWall
       objectReference: {fileID: 0}
     - target: {fileID: 9043662285795674229, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043662285795674229, guid: 68c429b4436e95349a7b908f654dd6f8,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043662285795674229, guid: 68c429b4436e95349a7b908f654dd6f8,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043662285795674229, guid: 68c429b4436e95349a7b908f654dd6f8,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9043662285795674229, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
@@ -89,3 +138,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68c429b4436e95349a7b908f654dd6f8, type: 3}
+--- !u!1 &7726679313364819953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8797590724222965054, guid: 68c429b4436e95349a7b908f654dd6f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1237926686569056975}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &795434494685104113 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1883644521500151102, guid: 68c429b4436e95349a7b908f654dd6f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1237926686569056975}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a20c1b21a3f94bb5b2d3b901c9aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
