@@ -6,13 +6,6 @@ using UnityEngine;
 public class TileTube : MonoBehaviour
 {
     private Vector2 Position;
-    private static Vector2 ZeroPos = new Vector2(-1000 , -400);
-    private static Vector2 ScrollPos = new Vector2(700 , 200);
-    private static Vector2 ScrollBoundsMin = new Vector2(500 , -500);
-    private static Vector2 ScrollBoundsMax = new Vector2(900 , 500);
-    //public bool onScroll = true;
-    
-    
 
     private UIDragDropItem dd => GetComponent<UIDragDropItem>();
 
@@ -21,7 +14,7 @@ public class TileTube : MonoBehaviour
         dd.OnStartDrag += OnStartDrag;
         dd.OnEndDrag += OnEndDrag;
         dd.OnEndDrag += OnProcessDrag;
-        Position = ScrollPos;
+        Position = Levels.ScrollPos;
     }
 
     private void OnStartDrag()
@@ -50,7 +43,7 @@ public class TileTube : MonoBehaviour
     private void DropTile()
     {
         Vector2 position = transform.localPosition;
-        var zeroPos = ZeroPos;
+        var zeroPos = Levels.ZeroPos;
         var sprite = GetComponent<UI2DSprite>();
         var tileSize = new Vector2(sprite.width,sprite.height);
         //var tileSize = new Vector2(100,100);
@@ -65,10 +58,10 @@ public class TileTube : MonoBehaviour
             {
                 Position = new Vector2(zeroPos.x + tileSize.x * mapPosition.x, zeroPos.y + tileSize.y * mapPosition.y);
             }
-        } else if (position.x > ScrollBoundsMin.x && position.x < ScrollBoundsMax.x &&
-                   position.y > ScrollBoundsMin.y && position.y < ScrollBoundsMax.y)
+        } else if (position.x > Levels.ScrollBoundsMin.x && position.x < Levels.ScrollBoundsMax.x &&
+                   position.y > Levels.ScrollBoundsMin.y && position.y < Levels.ScrollBoundsMax.y)
         {
-            Position = ScrollPos;
+            Position = Levels.ScrollPos;
         }
 
         transform.localPosition = Position;
