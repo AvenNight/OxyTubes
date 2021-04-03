@@ -210,7 +210,7 @@ MonoBehaviour:
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 3
-  mClipRange: {x: 0, y: 0, z: 300, w: 800}
+  mClipRange: {x: 0, y: 0, z: 3000, w: 800}
   mClipSoftness: {x: 4, y: 4}
   mDepth: 1
   mSortingOrder: 0
@@ -296,8 +296,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layout: {fileID: 4004656627422951897}
   scrollView: {fileID: 4004656627052939775}
-  Empty: {fileID: 8158933638709774369, guid: 631de30cc9ee68a4f868a5d0b2913036, type: 3}
-  Wall: {fileID: 7915043992693943097, guid: 6086651d56df0d24c9f6f26b0404694b, type: 3}
+  TileTubePrefab: {fileID: 2348192401606454690, guid: 2393b5779ab436c4b9b81b1f2915a313,
+    type: 3}
 --- !u!1 &4004656627422951898
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,13 +380,13 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 1
   mWidth: 100
-  mHeight: 1950
+  mHeight: 2
   mDepth: 0
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 0.051282052
+  aspectRatio: 50
 --- !u!65 &3294217419914149768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -398,8 +398,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 1950, z: 0}
-  m_Center: {x: 0, y: -975, z: 0}
+  m_Size: {x: 100, y: 2, z: 0}
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!114 &3294217419914149775
 MonoBehaviour:
   m_ObjectHideFlags: 0

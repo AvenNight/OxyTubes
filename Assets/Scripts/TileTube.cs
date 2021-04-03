@@ -1,12 +1,11 @@
-﻿using System;
-using NUnit.Framework.Constraints;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(UIDragDropItem))]
 public class TileTube : MonoBehaviour
 {
-    private Vector2 Position;
+    //public UI2DSprite Sprite;
 
+    private Vector2 Position;
     private UIDragDropItem dd => GetComponent<UIDragDropItem>();
 
     public void Start()
@@ -58,16 +57,27 @@ public class TileTube : MonoBehaviour
             {
                 Position = new Vector2(zeroPos.x + tileSize.x * mapPosition.x, zeroPos.y + tileSize.y * mapPosition.y);
             }
-        } else if (position.x > Levels.ScrollBoundsMin.x && position.x < Levels.ScrollBoundsMax.x &&
-                   position.y > Levels.ScrollBoundsMin.y && position.y < Levels.ScrollBoundsMax.y)
-        {
-            Position = Levels.ScrollPos;
+        //} else if (position.x > Levels.ScrollBoundsMin.x && position.x < Levels.ScrollBoundsMax.x &&
+        //           position.y > Levels.ScrollBoundsMin.y && position.y < Levels.ScrollBoundsMax.y)
         }
+        else
+        {
+            //Position = Levels.ScrollPos;
+            Position = pickPosition;
+            //transform.localPosition = asfasf;
+        }
+
+
+        //Position = asfasf;
 
         transform.localPosition = Position;
     }
+
+    private Vector3 pickPosition;
     private void PickTile()
     {
-        
+        pickPosition = this.transform.localPosition;
+
+
     }
 }

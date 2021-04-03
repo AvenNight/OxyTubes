@@ -3,23 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class UITileScroll : MonoBehaviour
 {
     [SerializeField] protected VerticalLayout layout;
     [SerializeField] protected UIScrollView scrollView;
 
-    public Tile Empty;
-    public Tile Wall;
+    public TileTube TileTubePrefab;
+    //public TileTube Wall;
 
-    protected List<Tile> Tiles;
-    protected int step => Tiles.FirstOrDefault().Sprite.height;
+    //protected List<Tile> Tiles;
+    protected List<TileTube> Tiles;
+    //protected int step => Tiles.FirstOrDefault().Sprite.height;
 
     public void Set(List<TileType> tiles)
     {
         Clear();
 
-        Tiles = new List<Tile>();
+        Tiles = new List<TileTube>();
 
         foreach (var tile in tiles)
         {
@@ -66,19 +68,21 @@ public class UITileScroll : MonoBehaviour
         Tiles.Clear();
     }
 
-    protected Tile CreateTile(TileType type)
+    protected TileTube CreateTile(TileType type)
     {
-        switch (type)
-        {
-            case TileType.Empty:
-            default:
-                return Instantiate(Empty.gameObject, layout.transform).GetComponent<Tile>();
-            case TileType.Wall:
-                return Instantiate(Wall.gameObject, layout.transform).GetComponent<Tile>();
-            case TileType.City:
-            case TileType.OxyGenerator:
-                return null;
-        }
+        //switch (type)
+        //{
+        //    case TileType.Empty:
+        //    default:
+        //        return Instantiate(Empty.gameObject, layout.transform).GetComponent<Tile>();
+        //    case TileType.Wall:
+        //        return Instantiate(Wall.gameObject, layout.transform).GetComponent<Tile>();
+        //    case TileType.City:
+        //    case TileType.OxyGenerator:
+        //        return null;
+        //}
+
+        return Instantiate(TileTubePrefab.gameObject, layout.transform).GetComponent<TileTube>();
     }
 
     protected void UpdateLayout()
