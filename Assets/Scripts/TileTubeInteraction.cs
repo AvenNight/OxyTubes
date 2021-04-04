@@ -9,6 +9,7 @@ public class TileTubeInteraction : MonoBehaviour
     private Vector2 Position;
     private UIDragDropItem dd => GetComponent<UIDragDropItem>();
 
+    private UIPanel dragPanel;
     public void Start()
     {
         dd.OnStartDrag += OnStartDrag;
@@ -21,12 +22,15 @@ public class TileTubeInteraction : MonoBehaviour
     {
         //Debug.Log("Start drag");
         PickTile();
+        dragPanel = this.gameObject.AddComponent<UIPanel>();
+        dragPanel.depth = 1000;
     }
 
     private void OnEndDrag()
     {
         //Debug.Log("End drag");
         DropTile();
+        Destroy(dragPanel);
     }
     private void OnProcessDrag()
     {
