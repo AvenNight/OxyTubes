@@ -1164,12 +1164,12 @@ PrefabInstance:
     - target: {fileID: 5693148124526905886, guid: 75e055d848e31d84e91c089d22390b3c,
         type: 3}
       propertyPath: mWidth
-      value: 152
+      value: 148
       objectReference: {fileID: 0}
     - target: {fileID: 5693148124526905886, guid: 75e055d848e31d84e91c089d22390b3c,
         type: 3}
       propertyPath: aspectRatio
-      value: 2.5333333
+      value: 2.4666667
       objectReference: {fileID: 0}
     - target: {fileID: 7945180578895502608, guid: 75e055d848e31d84e91c089d22390b3c,
         type: 3}
