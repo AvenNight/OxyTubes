@@ -48,3 +48,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8422250f41319aa46a83cf3d970106b6, type: 3}
   - {fileID: 21300000, guid: 69df95d4257cbc74aa7ce21308705c55, type: 3}
   - {fileID: 21300000, guid: 237f259e75b42464aa3ca1354e3a959b, type: 3}
+  Tube1: {fileID: 21300000, guid: 0f875280249b45546aed103d73204efb, type: 3}
+  Tube2: {fileID: 21300000, guid: 845c67ed898306b43887c43acc264895, type: 3}
+  Tube2Line: {fileID: 21300000, guid: 9fb90010b10fbd548b4e6795f1497f5f, type: 3}
+  Tube3: {fileID: 21300000, guid: ad48f6c2e26ab4e45a8baf725d08cc85, type: 3}
+  Tube4: {fileID: 0}
