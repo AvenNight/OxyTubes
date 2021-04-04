@@ -39,7 +39,7 @@ public class Tile : MonoBehaviour
 
     public void TileLight()
     {
-        Sprite.color = Color.green;
+        Sprite.color = Color.blue;
     }
 
     public void TileUnlight()
