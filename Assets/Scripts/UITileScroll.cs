@@ -27,7 +27,11 @@ public class UITileScroll : MonoBehaviour
         {
             var o = CreateTile(tile);
             var ddTube = o.GetComponent<TileTubeInteraction>();
-            ddTube.OnTilePut += () => o.transform.parent = this.transform;
+            ddTube.OnTilePut += () =>
+            {
+                o.transform.parent = this.transform;
+                UpdateLayout();
+            };
             Tiles.Add(o);
         }
 

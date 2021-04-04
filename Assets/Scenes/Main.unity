@@ -443,7 +443,7 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 0, g: 1, b: 0.10208559, a: 1}
   mPivot: 4
   mWidth: 200
   mHeight: 200
@@ -1131,6 +1131,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1069688263}
     m_Modifications:
+    - target: {fileID: 1094588855725467138, guid: 11ffe8025fdd45a4db0afef18c1998ea,
+        type: 3}
+      propertyPath: mColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094588855725467138, guid: 11ffe8025fdd45a4db0afef18c1998ea,
+        type: 3}
+      propertyPath: mColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094588855725467138, guid: 11ffe8025fdd45a4db0afef18c1998ea,
+        type: 3}
+      propertyPath: mColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3106009089471417523, guid: 11ffe8025fdd45a4db0afef18c1998ea,
         type: 3}
       propertyPath: m_Name

@@ -10,9 +10,10 @@ public class TileTubeInteraction : MonoBehaviour
     private UI2DSprite sprite => GetComponent<UI2DSprite>();
     private Camera camera => CameraController.Camera;
     
-    private Vector3 deltaPos;
     private Vector3 Position;
 
+    private Tile curLightTile = null;
+    
     private UIPanel dragPanel;
 
     public Action OnTilePut;
@@ -26,56 +27,73 @@ public class TileTubeInteraction : MonoBehaviour
 
     private void OnStartDrag()
     {
+        Position = transform.position;
+        var tile = GetTile();
+        if (tile != null)
+        {
+            tile.isEnable = true;
+        }
+        // возвышаем выше всего
         dragPanel = this.gameObject.AddComponent<UIPanel>();
         dragPanel.depth = 1000;
-
-        var mousePos = Input.mousePosition;
-        var mousePosWorld = camera.ScreenToWorldPoint(mousePos);
-        Position = transform.position;
-        var tilePos = transform.localPosition;
-        tilePos.x += sprite.width;
-        tilePos.y += sprite.height;
-        var tilePosWorld = camera.ScreenToWorldPoint(tilePos);
-        deltaPos = mousePosWorld - tilePosWorld;
     }
 
     private void OnEndDrag()
     {
-        Destroy(dragPanel);
-
         SetDropPosition();
         transform.position = Position;
+        if (curLightTile != null)
+        {
+            curLightTile.TileUnlight();
+            curLightTile = null;
+        }
+        // возвращаем высоту
+        Destroy(dragPanel);
     }
 
     private void SetDropPosition()
-    { 
-        var mousePos = Input.mousePosition;
-        var mousePosWorld = camera.ScreenToWorldPoint(mousePos);
-        var position = mousePosWorld - deltaPos;
-        var hit = Physics2D.Raycast(mousePosWorld, Vector2.zero);
-        if (!hit.collider)
-        {
-            //Debug.Log("no collider");
-            return;
-        }
-        var tile = hit.collider.GetComponent<Tile>();
-        if (tile == null)
-        {
-            return;
-        }
-
-        if (tile.TileType == TileType.Empty)
+    {
+        var tile = GetTile();
+        if (tile == null) return;
+        if (tile.TileType == TileType.Empty && tile.isEnable)
         {
             Position = tile.transform.position;
+            tile.isEnable = false;
             OnTilePut?.Invoke();
         }
     }
 
-    private void OnProcessDrag()
-    {
+    private Tile GetTile()
+    { 
+        var mousePos = Input.mousePosition;
+        var mousePosWorld = camera.ScreenToWorldPoint(mousePos);
+        var hit = Physics2D.Raycast(mousePosWorld, Vector2.zero);
+        return !hit.collider ? null : hit.collider.GetComponent<Tile>();
     }
 
-    private void Update()
+    private void OnProcessDrag()
     {
+        var tile = GetTile();
+        if (tile == null )
+        {
+            if (curLightTile == null)
+            {
+                return;
+            }
+            curLightTile.TileUnlight();
+            curLightTile = null;
+            return;
+        }
+
+        if (tile != curLightTile && curLightTile != null)
+        {
+            curLightTile.TileUnlight();
+            curLightTile = null;
+        }
+        if (tile.TileType == TileType.Empty && tile.isEnable)
+        {
+            curLightTile = tile;
+            curLightTile.TileLight();
+        }
     }
 }
