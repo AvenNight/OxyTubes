@@ -52,4 +52,4 @@ MonoBehaviour:
   Tube2: {fileID: 21300000, guid: 845c67ed898306b43887c43acc264895, type: 3}
   Tube2Line: {fileID: 21300000, guid: 9fb90010b10fbd548b4e6795f1497f5f, type: 3}
   Tube3: {fileID: 21300000, guid: ad48f6c2e26ab4e45a8baf725d08cc85, type: 3}
-  Tube4: {fileID: 0}
+  Tube4: {fileID: 21300000, guid: e72e8fce44653d04fabfffc0a5714fcd, type: 3}

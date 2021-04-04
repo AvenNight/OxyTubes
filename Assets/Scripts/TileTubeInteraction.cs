@@ -11,8 +11,11 @@ public class TileTubeInteraction : MonoBehaviour
     private Camera camera => CameraController.Camera;
     
     private Vector3 deltaPos;
-    private Vector3 pickPosition;
     private Vector3 Position;
+
+    private UIPanel dragPanel;
+
+    public Action OnTilePut;
 
     public void Start()
     {
@@ -23,9 +26,12 @@ public class TileTubeInteraction : MonoBehaviour
 
     private void OnStartDrag()
     {
+        dragPanel = this.gameObject.AddComponent<UIPanel>();
+        dragPanel.depth = 1000;
+
         var mousePos = Input.mousePosition;
         var mousePosWorld = camera.ScreenToWorldPoint(mousePos);
-        pickPosition = transform.position;
+        Position = transform.position;
         var tilePos = transform.localPosition;
         tilePos.x += sprite.width;
         tilePos.y += sprite.height;
@@ -35,6 +41,8 @@ public class TileTubeInteraction : MonoBehaviour
 
     private void OnEndDrag()
     {
+        Destroy(dragPanel);
+
         SetDropPosition();
         transform.position = Position;
     }
@@ -59,6 +67,7 @@ public class TileTubeInteraction : MonoBehaviour
         if (tile.TileType == TileType.Empty)
         {
             Position = tile.transform.position;
+            OnTilePut?.Invoke();
         }
     }
 

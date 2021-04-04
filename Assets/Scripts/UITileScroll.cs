@@ -11,13 +11,13 @@ public class UITileScroll : MonoBehaviour
     [SerializeField] protected UIScrollView scrollView;
 
     public TileTube TileTubePrefab;
-    //public TileTube Wall;
 
     //protected List<Tile> Tiles;
     protected List<TileTube> Tiles;
     //protected int step => Tiles.FirstOrDefault().Sprite.height;
 
-    public void Set(List<TileType> tiles)
+    //public void Set(List<TileType> tiles)
+    public void Set(List<TileData> tiles)
     {
         Clear();
 
@@ -26,6 +26,8 @@ public class UITileScroll : MonoBehaviour
         foreach (var tile in tiles)
         {
             var o = CreateTile(tile);
+            var ddTube = o.GetComponent<TileTubeInteraction>();
+            ddTube.OnTilePut += () => o.transform.parent = this.transform;
             Tiles.Add(o);
         }
 
@@ -68,21 +70,31 @@ public class UITileScroll : MonoBehaviour
         Tiles.Clear();
     }
 
-    protected TileTube CreateTile(TileType type)
+    protected TileTube CreateTile(TileData data)
     {
-        //switch (type)
-        //{
-        //    case TileType.Empty:
-        //    default:
-        //        return Instantiate(Empty.gameObject, layout.transform).GetComponent<Tile>();
-        //    case TileType.Wall:
-        //        return Instantiate(Wall.gameObject, layout.transform).GetComponent<Tile>();
-        //    case TileType.City:
-        //    case TileType.OxyGenerator:
-        //        return null;
-        //}
+        var result = Instantiate(TileTubePrefab.gameObject, layout.transform).GetComponent<TileTube>();
 
-        return Instantiate(TileTubePrefab.gameObject, layout.transform).GetComponent<TileTube>();
+        switch (data.Sides)
+        {
+            //case 1:
+            //    result.Sprite.sprite2D = ArtCollection.Instance.Tube1;
+            //    break;
+            //case 2:
+            //    result.Sprite.sprite2D = ArtCollection.Instance.Tube2Line;
+            //    break;
+            //case 3:
+            //    result.Sprite.sprite2D = ArtCollection.Instance.Tube3;
+            //    break;
+            //case 4:
+            //    result.Sprite.sprite2D = ArtCollection.Instance.Tube4;
+            //    break;
+            default:
+                //return null;
+                break;
+        }
+
+        //return Instantiate(TileTubePrefab.gameObject, layout.transform).GetComponent<TileTube>();
+        return result;
     }
 
     protected void UpdateLayout()

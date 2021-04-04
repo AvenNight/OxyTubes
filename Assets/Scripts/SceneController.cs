@@ -9,29 +9,29 @@ public class SceneController : MonoBehaviour
 
     private void OnEnable()
     {
-        //sceneCreator.CreateScene(Levels.Level1);
-        SceneCreator.CreateScene(Levels.Level3);
+        SceneCreator.CreateScene(Levels.Level1);
+        //SceneCreator.CreateScene(Levels.Level3);
 
-        var tiles = new List<TileType>
-        {
-            TileType.Empty,
-            TileType.Wall,
-            TileType.Empty,
-            TileType.Wall,
-            TileType.Empty,
-            TileType.Wall,
-            TileType.Empty,
-            TileType.Wall,
-            TileType.Empty,
-            TileType.Wall,
-            TileType.Empty,
-            TileType.Wall,
-            TileType.Empty,
-            TileType.Wall,
-            TileType.Empty,
-         };
+        //var tiles = new List<TileType>
+        //{
+        //    TileType.Empty,
+        //    TileType.Wall,
+        //    TileType.Empty,
+        //    TileType.Wall,
+        //    TileType.Empty,
+        //    TileType.Wall,
+        //    TileType.Empty,
+        //    TileType.Wall,
+        //    TileType.Empty,
+        //    TileType.Wall,
+        //    TileType.Empty,
+        //    TileType.Wall,
+        //    TileType.Empty,
+        //    TileType.Wall,
+        //    TileType.Empty,
+        // };
 
-        UITileScroll.Set(tiles);
+        UITileScroll.Set(Levels.GetTilesData(Levels.Level1Tubes));
         Timer.Set(120f, 0.1f);
     }
 
