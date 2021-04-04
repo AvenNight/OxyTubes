@@ -80,8 +80,6 @@ public class TileTubeInteraction : MonoBehaviour
 
                 moveOnScroll = false;
 
-                //MoveOnScroll();
-                Debug.Log("Ya na scrolle");
             }
         }
         
@@ -94,6 +92,7 @@ public class TileTubeInteraction : MonoBehaviour
         {
             tile = collider.GetComponent<Tile>();
         }
+        
         if (collider == null)
         {
             if (curTile != null)
@@ -109,6 +108,7 @@ public class TileTubeInteraction : MonoBehaviour
         {
             curTile = null;
             Position = collider.transform.position;
+            Position.y = camera.ScreenToWorldPoint(Input.mousePosition).y;
             moveOnScroll = true;
         }
         else if (tile != null)
@@ -121,6 +121,9 @@ public class TileTubeInteraction : MonoBehaviour
             } else if (!tile.isEnable && curTile != null)
             {
                 curTile.isEnable = false;
+            } else if ((tile.TileType != TileType.Empty || !tile.isEnable) && curTile == null)
+            {
+                moveOnScroll = true;
             }
         }
     }
