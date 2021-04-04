@@ -75,6 +75,11 @@ public class TileTubeInteraction : MonoBehaviour
         }
         if (curTime >= time)
         {
+            var audioSource = GetComponent<AudioSource>();
+            audioSource.clip = AudioController.Instance.Audios[1];
+            audioSource.loop = false;
+            audioSource.Play();
+            
             transform.position = end;
             GetComponent<Collider>().enabled = true;
             if (moveOnScroll)
