@@ -19,7 +19,7 @@ public class Tile : MonoBehaviour
         Set(TileType);
     }
 
-    private void Set(TileType type)
+    public virtual void Set(TileType type)
     {
         switch (type)
         {
@@ -31,8 +31,8 @@ public class Tile : MonoBehaviour
                 Sprite.sprite2D = ArtCollection.Instance.GetRandomWall();
                 break;
             case TileType.City:
-                break;
             case TileType.OxyGenerator:
+                // do nothing
                 break;
         }
     }

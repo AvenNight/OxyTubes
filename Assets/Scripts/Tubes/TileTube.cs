@@ -3,11 +3,11 @@
 public class TileTube : MonoBehaviour
 {
     public UI2DSprite Sprite;
-    //public TileData Data { get; protected set; }
+    public TubeData Data { get; protected set; }
 
-    public void Set(TileData data)
+    public void Set(TubeData data)
     {
-        //Data = data;
+        Data = data;
 
         switch (data.Sides)
         {

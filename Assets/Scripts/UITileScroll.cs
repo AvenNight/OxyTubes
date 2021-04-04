@@ -16,8 +16,7 @@ public class UITileScroll : MonoBehaviour
     protected List<TileTube> Tiles;
     //protected int step => Tiles.FirstOrDefault().Sprite.height;
 
-    //public void Set(List<TileType> tiles)
-    public void Set(List<TileData> tiles)
+    public void Set(List<TubeData> tiles)
     {
         Clear();
 
@@ -74,7 +73,7 @@ public class UITileScroll : MonoBehaviour
         Tiles.Clear();
     }
 
-    protected TileTube CreateTile(TileData data)
+    protected TileTube CreateTile(TubeData data)
     {
         var result = Instantiate(TileTubePrefab.gameObject, layout.transform).GetComponent<TileTube>();
         result.Set(data);

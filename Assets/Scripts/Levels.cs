@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 public static class Levels
 {
+    // l r u d – город лево/право/верх/низ
+    // 1 2 3 4 – генератор лево/право/верх/низ
     public static readonly char[,] Level1 = new char[5, 5] {
-        { ' ', ' ', ' ', ' ', 'w' },
+        { ' ', ' ', ' ', ' ', 'l' },
         { ' ', 'w', ' ', ' ', 'w' },
         { ' ', ' ', 'w', ' ', ' ' },
         { ' ', ' ', ' ', 'w', ' ' },
-        { 'w', ' ', ' ', ' ', ' ' },
+        { '2', ' ', ' ', ' ', ' ' },
     };
 
     // 1:  ˂˃˄˅
@@ -33,5 +34,5 @@ public static class Levels
         { ' ', 'w', ' ', ' ', 'w' },
     };
 
-    public static List<TileData> GetTilesData(string s) => s.Select(e => TileDataHelper.GetTileData(e)).ToList();
+    public static List<TubeData> GetTilesData(string s) => s.Select(e => TubeDataHelper.GetTileData(e)).ToList();
 }

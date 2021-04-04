@@ -15,6 +15,13 @@ public class ArtCollection : MonoBehaviour
 	public Sprite Tube2Line;
 	public Sprite Tube3;
 	public Sprite Tube4;
+	
+	public Sprite CityLeft;
+	public Sprite CityRight;
+	public Sprite CityUp;
+	public Sprite CityDown;
+
+	public Sprite Oxy;
 
 	private void Awake()
 	{

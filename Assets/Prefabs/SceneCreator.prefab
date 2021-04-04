@@ -47,3 +47,6 @@ MonoBehaviour:
   MapOffset: {x: 0, y: 0}
   Empty: {fileID: 9005542636008792566, guid: 68c429b4436e95349a7b908f654dd6f8, type: 3}
   Wall: {fileID: 6671966453194597683, guid: d500a875fcd9d054293a388a493b17fd, type: 3}
+  City: {fileID: 6857789703474291265, guid: a009de29e27e14442aca851556abae1e, type: 3}
+  OxyGenerator: {fileID: 6618426016617602509, guid: f1540b50eb893ba409c6921953cb738f,
+    type: 3}

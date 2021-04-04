@@ -53,3 +53,8 @@ MonoBehaviour:
   Tube2Line: {fileID: 21300000, guid: 9fb90010b10fbd548b4e6795f1497f5f, type: 3}
   Tube3: {fileID: 21300000, guid: ad48f6c2e26ab4e45a8baf725d08cc85, type: 3}
   Tube4: {fileID: 21300000, guid: e72e8fce44653d04fabfffc0a5714fcd, type: 3}
+  CityLeft: {fileID: 21300000, guid: d210b169c41ee764da2ad5628bd88cde, type: 3}
+  CityRight: {fileID: 21300000, guid: 506314dc1b7c0c840ad762fafd1c5e93, type: 3}
+  CityUp: {fileID: 21300000, guid: 96be0e359c0dde8478ba25dbe55be43e, type: 3}
+  CityDown: {fileID: 21300000, guid: 6d888f2939d12f2439de5257dd9d0f5d, type: 3}
+  Oxy: {fileID: 21300000, guid: d8e105037710d624bb98077aabfcd3a4, type: 3}
