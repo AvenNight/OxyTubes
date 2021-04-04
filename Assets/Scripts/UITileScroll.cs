@@ -77,27 +77,7 @@ public class UITileScroll : MonoBehaviour
     protected TileTube CreateTile(TileData data)
     {
         var result = Instantiate(TileTubePrefab.gameObject, layout.transform).GetComponent<TileTube>();
-
-        switch (data.Sides)
-        {
-            //case 1:
-            //    result.Sprite.sprite2D = ArtCollection.Instance.Tube1;
-            //    break;
-            //case 2:
-            //    result.Sprite.sprite2D = ArtCollection.Instance.Tube2Line;
-            //    break;
-            //case 3:
-            //    result.Sprite.sprite2D = ArtCollection.Instance.Tube3;
-            //    break;
-            //case 4:
-            //    result.Sprite.sprite2D = ArtCollection.Instance.Tube4;
-            //    break;
-            default:
-                //return null;
-                break;
-        }
-
-        //return Instantiate(TileTubePrefab.gameObject, layout.transform).GetComponent<TileTube>();
+        result.Set(data);
         return result;
     }
 

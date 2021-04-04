@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
 public class SceneController : MonoBehaviour
 {
@@ -9,34 +8,14 @@ public class SceneController : MonoBehaviour
 
     private void OnEnable()
     {
-        SceneCreator.CreateScene(Levels.Level1);
-        //SceneCreator.CreateScene(Levels.Level3);
-
-        //var tiles = new List<TileType>
-        //{
-        //    TileType.Empty,
-        //    TileType.Wall,
-        //    TileType.Empty,
-        //    TileType.Wall,
-        //    TileType.Empty,
-        //    TileType.Wall,
-        //    TileType.Empty,
-        //    TileType.Wall,
-        //    TileType.Empty,
-        //    TileType.Wall,
-        //    TileType.Empty,
-        //    TileType.Wall,
-        //    TileType.Empty,
-        //    TileType.Wall,
-        //    TileType.Empty,
-        // };
-
-        UITileScroll.Set(Levels.GetTilesData(Levels.Level1Tubes));
-        Timer.Set(120f, 0.1f);
+        if (ArtCollection.Instance != null)
+            Start();
     }
 
-    public void OnClick(Tile tile)
+    private void Start()
     {
-        Debug.Log($"{tile.TileType}");
+        SceneCreator.CreateScene(Levels.Level1);
+        UITileScroll.Set(Levels.GetTilesData(Levels.Level1Tubes));
+        Timer.Set(120f, 0.1f);
     }
 }
