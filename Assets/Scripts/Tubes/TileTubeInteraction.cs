@@ -17,8 +17,8 @@ public class TileTubeInteraction : MonoBehaviour
     
     private UIPanel dragPanel;
 
-    public Action OnTilePut;
-    private bool moveOnScroll;
+    public Action<TileTubeInteraction> OnTilePut;
+    public bool moveOnScroll { get; private set; }
 
     public void Start()
     {
@@ -45,7 +45,7 @@ public class TileTubeInteraction : MonoBehaviour
         var shift = Position - transform.position;
         GetComponent<Collider>().enabled = false;
         StartCoroutine(MoveTileTube(shift));
-        OnTilePut?.Invoke();
+        OnTilePut?.Invoke(this);
         if (curLightTile != null)
         {
             curLightTile.TileUnlight();
@@ -75,7 +75,10 @@ public class TileTubeInteraction : MonoBehaviour
             GetComponent<Collider>().enabled = true;
             if (moveOnScroll)
             {
+                SceneController.Instance.UITileScroll.AddTube(this.GetComponent<TileTube>());
+
                 moveOnScroll = false;
+
                 //MoveOnScroll();
                 Debug.Log("Ya na scrolle");
             }

@@ -2,9 +2,19 @@
 
 public class SceneController : MonoBehaviour
 {
+    public static SceneController Instance;
+
     public SceneCreator SceneCreator;
     public UITileScroll UITileScroll;
     public Timer Timer;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else if (Instance == this)
+            Destroy(gameObject);
+    }
 
     private void OnEnable()
     {
