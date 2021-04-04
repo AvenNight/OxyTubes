@@ -10,6 +10,8 @@ public class SceneCreator : MonoBehaviour
 
     public void CreateScene(char [,] map)
     {
+        MapClean();
+
         var curPos = Vector2.zero;
 
         Tile tile = null;
@@ -27,6 +29,13 @@ public class SceneCreator : MonoBehaviour
         }
 
         MapRoot.localPosition = -curPos / 2 + MapOffset;
+    }
+
+    protected void MapClean()
+    {
+        int n = MapRoot.transform.childCount;
+        for (int i = 0; i < n; i++)
+            Destroy(MapRoot.transform.GetChild(i).gameObject);
     }
 
     protected Tile CreateTile(char type)

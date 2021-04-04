@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2035341347321246043
+--- !u!1 &5306065594683730971
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2035341347321246041}
-  - component: {fileID: 2035341347321246042}
+  - component: {fileID: 5306065594683730973}
+  - component: {fileID: 9157015773107662426}
   m_Layer: 0
-  m_Name: SceneCreator
+  m_Name: ArtCollection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2035341347321246041
+--- !u!4 &5306065594683730973
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035341347321246043}
+  m_GameObject: {fileID: 5306065594683730971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,19 +31,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2035341347321246042
+--- !u!114 &9157015773107662426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035341347321246043}
+  m_GameObject: {fileID: 5306065594683730971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61b6a2155e7dc0d48b6c3195bff1492d, type: 3}
+  m_Script: {fileID: 11500000, guid: 75862bc625b450e4dacbb624c2d2cb1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapRoot: {fileID: 0}
-  MapOffset: {x: 0, y: 0}
-  Empty: {fileID: 9005542636008792566, guid: 68c429b4436e95349a7b908f654dd6f8, type: 3}
-  Wall: {fileID: 6671966453194597683, guid: d500a875fcd9d054293a388a493b17fd, type: 3}
+  Empty: {fileID: 21300000, guid: 445bce12a3e523741995d575f4e0a944, type: 3}
+  Walls:
+  - {fileID: 21300000, guid: 8422250f41319aa46a83cf3d970106b6, type: 3}
+  - {fileID: 21300000, guid: 69df95d4257cbc74aa7ce21308705c55, type: 3}
+  - {fileID: 21300000, guid: 237f259e75b42464aa3ca1354e3a959b, type: 3}

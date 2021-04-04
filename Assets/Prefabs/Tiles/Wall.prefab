@@ -10,22 +10,27 @@ PrefabInstance:
     - target: {fileID: 4410206695096265762, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
       propertyPath: mColor.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4410206695096265762, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
       propertyPath: mColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4410206695096265762, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
       propertyPath: mColor.r
-      value: 0.33962262
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8797590724222965054, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005542636008792566, guid: 68c429b4436e95349a7b908f654dd6f8,
+        type: 3}
+      propertyPath: TileType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9043662285795674229, guid: 68c429b4436e95349a7b908f654dd6f8,
         type: 3}

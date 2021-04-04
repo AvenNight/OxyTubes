@@ -5,6 +5,7 @@ public class SceneController : MonoBehaviour
 {
     public SceneCreator SceneCreator;
     public UITileScroll UITileScroll;
+    public Timer Timer;
 
     private void OnEnable()
     {
@@ -31,6 +32,7 @@ public class SceneController : MonoBehaviour
          };
 
         UITileScroll.Set(tiles);
+        Timer.Set(120f, 0.1f);
     }
 
     public void OnClick(Tile tile)
