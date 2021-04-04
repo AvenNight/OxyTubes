@@ -83,7 +83,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mSprite: {fileID: 21300000, guid: 60c30f1826823854cbd39a54804dcdf2, type: 3}
+  mSprite: {fileID: 21300000, guid: 96ce6240dcb6e4a4bb27b4ae53e43b99, type: 3}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
   mFixedAspect: 0

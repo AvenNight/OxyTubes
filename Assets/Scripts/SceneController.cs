@@ -12,6 +12,10 @@ public class SceneController : MonoBehaviour
     public TubeData[,] LevelTubeData;
 
     public GameObject WinLabel;
+    public UI2DSprite LevelBack;
+    public Sprite Level2;
+
+    private int curLvl;
 
     private void Awake()
     {
@@ -29,18 +33,44 @@ public class SceneController : MonoBehaviour
 
     private void Start()
     {
+        StartLevel1();
+    }
+
+    public void StartLevel1()
+    {
+        curLvl = 1;
         LevelTubeData = SceneCreator.CreateScene(Levels.Level1);
         UITileScroll.Set(Levels.GetTilesData(Levels.Level1Tubes));
         Timer.Set(120f, 0.1f);
     }
 
+    public void StartLevel2()
+    {
+        LevelBack.sprite2D = Level2;
+        curLvl = 2;
+        LevelTubeData = SceneCreator.CreateScene(Levels.Level2);
+        UITileScroll.Set(Levels.GetTilesData(Levels.Level2Tubes));
+        Timer.Set(180f, 0.1f);
+    }
 
     private bool[,] levelChecked;
     public bool LevelCheck()
     {
         levelChecked = new bool[LevelTubeData.GetLength(0), LevelTubeData.GetLength(1)];
 
-        var result = LevelCheck(LevelTubeData[4, 0], 4, 0);
+        bool result = false;
+
+        switch (curLvl)
+        {
+            case 1:
+                result = LevelCheck(LevelTubeData[4, 0], 4, 0);
+                break;
+            case 2:
+                result = LevelCheck(LevelTubeData[6, 0], 6, 0);
+                break;
+        }
+        //var result = 
+        //    LevelCheck(LevelTubeData[4, 0], 4, 0);
 
         for (int x = LevelTubeData.GetLength(0) - 1; x >= 0; x--)
         {
@@ -62,8 +92,14 @@ public class SceneController : MonoBehaviour
 
     public void Win()
     {
-        //WinLabel.GetComponent<TweenAlpha>();
         WinLabel.SetActive(true);
+    }
+
+    public void WinClick()
+    {
+        //WinLabel.SetActive(false);
+        WinLabel.GetComponent<TweenAlpha>().PlayReverse();
+        StartLevel2();
     }
 
     public bool LevelCheck(TubeData td, int x, int y)

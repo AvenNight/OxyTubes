@@ -68,7 +68,7 @@ public class UITileScroll : MonoBehaviour
     {
         //UpdateScroll();
         //layout.transform.localPosition += (up ? step : -step) * Vector3.up;
-        StartCoroutine(ScrollMoveProccess((up ? 150 : -150) * Vector3.up));
+        StartCoroutine(ScrollMoveProccess((up ? -150 : 150) * Vector3.up));
     }
 
     protected IEnumerator ScrollMoveProccess(Vector3 shift, float time = 0.2f)

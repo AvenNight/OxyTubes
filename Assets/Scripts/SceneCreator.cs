@@ -50,6 +50,19 @@ public class SceneCreator : MonoBehaviour
 
     protected void MapClean()
     {
+
+
+        int nn = SceneController.Instance.UITileScroll.transform.childCount;
+        for (int i = 0; i < nn; i++)
+        {
+            var obj = SceneController.Instance.UITileScroll.transform.GetChild(i).gameObject;
+
+            if (obj.TryGetComponent< TileTube >(out TileTube outtube))
+            //if (obj is TileTube)
+                Destroy(outtube.gameObject);
+        }
+            
+
         int n = MapRoot.transform.childCount;
         for (int i = 0; i < n; i++)
             Destroy(MapRoot.transform.GetChild(i).gameObject);
