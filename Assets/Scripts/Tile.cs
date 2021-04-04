@@ -15,17 +15,8 @@ public class Tile : MonoBehaviour
     public bool isEnable = true;
 
     public (int X, int Y) Coords { get; protected set; }
-    //public Vector2Int Coords { get; protected set; }
-
-    //private void Start()
-    //{
-    //    Set(TileType);
-    //}
-
-    //public virtual void Set(TileType type, int x, int y)
     public virtual void Set(int x, int y)
     {
-        //Coords = new Vector2Int(x, y);
         Coords = (x, y);
 
         //switch (type)

@@ -8,11 +8,6 @@
     public int Sides => (Up ? 1 : 0) + (Down ? 1 : 0) + (Left ? 1 : 0) + (Right ? 1 : 0);
     public bool IsLine => (Up && Down && !Left && !Right) || (!Up && !Down && Left && Right);
 
-    //public TubeData() 
-    //{
-        //Up = Down = Left = Right = true;
-    //}
-
     public TubeData(bool up, bool down, bool left, bool right, int rotate = 0)
     {
         Up = up;
