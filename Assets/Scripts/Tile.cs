@@ -12,6 +12,7 @@ public class Tile : MonoBehaviour
 {
     public UI2DSprite Sprite;
     public TileType TileType;
+    public bool isEnable = true;
 
     private void Start()
     {
@@ -34,5 +35,16 @@ public class Tile : MonoBehaviour
             case TileType.OxyGenerator:
                 break;
         }
+    }
+
+    public void TileLight()
+    {
+        Sprite.color = new Color(0,255,0,255);
+    }
+
+    public void TileUnlight()
+    {
+        Sprite.color = Color.white;
+        Debug.Log("unlight");
     }
 }
