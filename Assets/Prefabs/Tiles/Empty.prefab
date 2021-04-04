@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9043662285795674229}
   - component: {fileID: 4410206695096265762}
   - component: {fileID: 9005542636008792566}
-  - component: {fileID: 8009064901565381487}
+  - component: {fileID: -5454250189408173476}
   m_Layer: 5
   m_Name: Empty
   m_TagString: Untagged
@@ -105,16 +105,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: {fileID: 4410206695096265762}
   TileType: 0
---- !u!65 &8009064901565381487
-BoxCollider:
+--- !u!61 &-5454250189408173476
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8797590724222965054}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 128, y: 128, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 128, y: 128}
+  m_EdgeRadius: 0
