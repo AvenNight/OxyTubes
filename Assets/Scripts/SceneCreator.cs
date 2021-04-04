@@ -10,7 +10,7 @@ public class SceneCreator : MonoBehaviour
     public Tile City;
     public Tile OxyGenerator;
 
-    public void CreateScene(char [,] map)
+    public TubeData[,] CreateScene(char [,] map)
     {
         var lvl = new TubeData[map.GetLength(0), map.GetLength(1)];
 
@@ -27,17 +27,25 @@ public class SceneCreator : MonoBehaviour
             {
                 tile = CreateTile(map[x, y]);
                 tile.transform.localPosition = curPos;
+                tile.Set(x, y);
+
                 curPos.x += tile.Sprite.width;
 
-                ///
-                //lvl[x,y]=new TubeData()
-                ///
-
+                // Сетаем данные о укладке труб (+город + генератор)
+                if (tile is Building)
+                {
+                    var tt = tile as Building;
+                    lvl[x, y] = new TubeData(tt.Data.Up, tt.Data.Down, tt.Data.Left, tt.Data.Right, tt.Data.Rotate);
+                }
+                //else
+                //    lvl[x, y] = null;
             }
             curPos.y += tile.Sprite.height;
         }
 
         MapRoot.localPosition = -curPos / 2 + MapOffset;
+
+        return lvl;
     }
 
     protected void MapClean()
