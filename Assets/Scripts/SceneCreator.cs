@@ -35,7 +35,7 @@ public class SceneCreator : MonoBehaviour
                 if (tile is Building)
                 {
                     var tt = tile as Building;
-                    lvl[x, y] = new TubeData(tt.Data.Up, tt.Data.Down, tt.Data.Left, tt.Data.Right, tt.Data.Rotate);
+                    lvl[x, y] = new TubeData(tt.Data.Up, tt.Data.Down, tt.Data.Left, tt.Data.Right, tt.Data.Rotate) { TileType = TileType.City };
                 }
                 else
                     lvl[x, y] = null;
