@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MapRoot: {fileID: 0}
-  Empty: {fileID: 496538207404318487, guid: 68c429b4436e95349a7b908f654dd6f8, type: 3}
-  Wall: {fileID: 496538207404318487, guid: 1b3e86be3b0f4204db2bde3f9e28ef98, type: 3}
+  MapOffset: {x: -150, y: 0}
+  Empty: {fileID: 9005542636008792566, guid: 68c429b4436e95349a7b908f654dd6f8, type: 3}
+  Wall: {fileID: 6671966453194597683, guid: d500a875fcd9d054293a388a493b17fd, type: 3}

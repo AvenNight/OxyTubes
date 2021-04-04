@@ -3,27 +3,30 @@
 public class SceneCreator : MonoBehaviour
 {
     public Transform MapRoot;
+    public Vector2 MapOffset;
 
     public Tile Empty;
     public Tile Wall;
 
     public void CreateScene(char [,] map)
     {
-        var curPos = new Vector2(-1000 , -400);
+        var curPos = Vector2.zero;
 
         Tile tile = null;
 
         for (int x = map.GetLength(0) - 1; x >= 0; x--)
         {
+            curPos.x = 0;
             for (int y = 0; y < map.GetLength(1); y++)
             {
                 tile = CreateTile(map[x, y]);
                 tile.transform.localPosition = curPos;
                 curPos.x += tile.Sprite.width;
             }
-            curPos.x = -1000;
             curPos.y += tile.Sprite.height;
         }
+
+        MapRoot.localPosition = -curPos / 2 + MapOffset;
     }
 
     protected Tile CreateTile(char type)

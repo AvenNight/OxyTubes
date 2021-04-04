@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bdabd91c9ce6144699c557f2698689e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sizeWidget: {fileID: 0}
+  _sizeWidget: {fileID: 8875940816277703456}
   DontShrinkIfInactiveInHierarchy: 0
 --- !u!1 &9171244039814181209
 GameObject:

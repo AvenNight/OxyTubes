@@ -9,7 +9,7 @@ public class SceneController : MonoBehaviour
     private void OnEnable()
     {
         //sceneCreator.CreateScene(Levels.Level1);
-        SceneCreator.CreateScene(Levels.Level2);
+        SceneCreator.CreateScene(Levels.Level3);
 
         var tiles = new List<TileType>
         {

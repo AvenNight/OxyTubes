@@ -9,6 +9,7 @@ public enum TileType
     City,
     OxyGenerator
 }
+
 public class Tile : MonoBehaviour
 {
     public UI2DSprite Sprite;

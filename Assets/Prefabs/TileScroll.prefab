@@ -299,7 +299,7 @@ MonoBehaviour:
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 4
-  mClipRange: {x: 0, y: 0, z: 3000, w: 800}
+  mClipRange: {x: 0, y: 0, z: 300, w: 800}
   mClipSoftness: {x: 4, y: 4}
   mDepth: 1
   mSortingOrder: 0
