@@ -39,12 +39,11 @@ public class Tile : MonoBehaviour
 
     public void TileLight()
     {
-        Sprite.color = new Color(0,255,0,255);
+        Sprite.color = Color.blue;
     }
 
     public void TileUnlight()
     {
         Sprite.color = Color.white;
-        Debug.Log("unlight");
     }
 }
