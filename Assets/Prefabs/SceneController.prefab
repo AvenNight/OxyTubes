@@ -46,3 +46,4 @@ MonoBehaviour:
   SceneCreator: {fileID: 0}
   UITileScroll: {fileID: 0}
   Timer: {fileID: 0}
+  WinLabel: {fileID: 0}

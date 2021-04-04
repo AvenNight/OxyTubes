@@ -11,6 +11,8 @@ public class SceneController : MonoBehaviour
 
     public TubeData[,] LevelTubeData;
 
+    public GameObject WinLabel;
+
     private void Awake()
     {
         if (Instance == null)
@@ -38,7 +40,30 @@ public class SceneController : MonoBehaviour
     {
         levelChecked = new bool[LevelTubeData.GetLength(0), LevelTubeData.GetLength(1)];
 
-        return LevelCheck(LevelTubeData[4, 0], 4, 0);
+        var result = LevelCheck(LevelTubeData[4, 0], 4, 0);
+
+        for (int x = LevelTubeData.GetLength(0) - 1; x >= 0; x--)
+        {
+            for (int y = 0; y < LevelTubeData.GetLength(1); y++)
+            {
+                if (LevelTubeData[x, y] != null && LevelTubeData[x,y].TileType == TileType.City)
+                {
+                    if (!levelChecked[x, y])
+                        result = false;
+                }
+            }
+        }
+
+        if (result)
+            Win();
+
+        return result;
+    }
+
+    public void Win()
+    {
+        //WinLabel.GetComponent<TweenAlpha>();
+        WinLabel.SetActive(true);
     }
 
     public bool LevelCheck(TubeData td, int x, int y)
