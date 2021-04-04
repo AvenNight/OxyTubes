@@ -23,18 +23,31 @@ public class UITileScroll : MonoBehaviour
         {
             var o = CreateTile(tile);
             var ddTube = o.GetComponent<TileTubeInteraction>();
-            ddTube.OnTilePut += (dd, t) =>
+            ddTube.OnTilePut += (cursorTube, underTile) =>
             {
-                if (!dd.moveOnScroll)
+                if (!cursorTube.moveOnScroll)
                     o.transform.parent = this.transform;
                 UpdateLayout();
 
-                var sad = t.Coords;
-                //t.ga
-                //t.ga
+                if (underTile == null)
+                    return;
 
-                //LevelTubeData
+                var curTube = cursorTube.GetComponent<TileTube>();
+                SceneController.Instance.LevelTubeData[underTile.Coords.X, underTile.Coords.Y] = curTube.Data;
+
+                var check = SceneController.Instance.LevelCheck();
+                Debug.Log(check);
             };
+
+            ddTube.OnTilePick += (cursorTube, underTile) =>
+            {
+                if (underTile == null)
+                    return;
+
+                //var curTube = cursorTube.GetComponent<TileTube>();
+                SceneController.Instance.LevelTubeData[underTile.Coords.X, underTile.Coords.Y] = null;
+            };
+
             Tiles.Add(o);
         }
 

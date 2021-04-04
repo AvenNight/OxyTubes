@@ -17,6 +17,7 @@ public class TileTubeInteraction : MonoBehaviour
     
     private UIPanel dragPanel;
 
+    public Action<TileTubeInteraction, Tile> OnTilePick;
     public Action<TileTubeInteraction, Tile> OnTilePut;
     public bool moveOnScroll { get; private set; }
 
@@ -37,6 +38,8 @@ public class TileTubeInteraction : MonoBehaviour
         // возвышаем выше всего
         dragPanel = this.gameObject.AddComponent<UIPanel>();
         dragPanel.depth = 1000;
+
+        OnTilePick?.Invoke(this, curTile);
     }
 
     private void OnEndDrag()

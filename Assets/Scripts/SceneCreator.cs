@@ -37,8 +37,8 @@ public class SceneCreator : MonoBehaviour
                     var tt = tile as Building;
                     lvl[x, y] = new TubeData(tt.Data.Up, tt.Data.Down, tt.Data.Left, tt.Data.Right, tt.Data.Rotate);
                 }
-                //else
-                //    lvl[x, y] = null;
+                else
+                    lvl[x, y] = null;
             }
             curPos.y += tile.Sprite.height;
         }
