@@ -33,7 +33,7 @@ public class SceneController : MonoBehaviour
 
     private void Start()
     {
-        StartLevel1();
+        //StartLevel1();
     }
 
     public void StartLevel1()

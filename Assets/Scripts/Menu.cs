@@ -6,6 +6,7 @@ public class Menu : MonoBehaviour
 {
     public void HideMenu()
     {
+        SceneController.Instance.StartLevel1();
         gameObject.SetActive(false);
     }
 }
