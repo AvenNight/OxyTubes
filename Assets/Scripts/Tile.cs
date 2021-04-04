@@ -14,14 +14,20 @@ public class Tile : MonoBehaviour
     public TileType TileType;
     public bool isEnable = true;
 
-    private void Start()
-    {
-        Set(TileType);
-    }
+    public (int X, int Y) Coords { get; protected set; }
 
-    public virtual void Set(TileType type)
+    //private void Start()
+    //{
+    //    Set(TileType);
+    //}
+
+    //public virtual void Set(TileType type, int x, int y)
+    public virtual void Set(int x, int y)
     {
-        switch (type)
+        Coords = (x, y);
+
+        //switch (type)
+        switch (TileType)
         {
             case TileType.Empty:
             default:

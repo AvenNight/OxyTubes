@@ -1,9 +1,7 @@
 ﻿using GameCore.UI.Layout;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class UITileScroll : MonoBehaviour
 {
@@ -12,7 +10,6 @@ public class UITileScroll : MonoBehaviour
 
     public TileTube TileTubePrefab;
 
-    //protected List<Tile> Tiles;
     protected List<TileTube> Tiles;
     //protected int step => Tiles.FirstOrDefault().Sprite.height;
 
@@ -26,11 +23,17 @@ public class UITileScroll : MonoBehaviour
         {
             var o = CreateTile(tile);
             var ddTube = o.GetComponent<TileTubeInteraction>();
-            ddTube.OnTilePut += (t) =>
+            ddTube.OnTilePut += (dd, t) =>
             {
-                if (!t.moveOnScroll)
+                if (!dd.moveOnScroll)
                     o.transform.parent = this.transform;
                 UpdateLayout();
+
+                var sad = t.Coords;
+                //t.ga
+                //t.ga
+
+                //LevelTubeData
             };
             Tiles.Add(o);
         }

@@ -8,6 +8,8 @@ public class SceneController : MonoBehaviour
     public UITileScroll UITileScroll;
     public Timer Timer;
 
+    public TubeData[,] LevelTubeData;
+
     private void Awake()
     {
         if (Instance == null)
@@ -24,7 +26,7 @@ public class SceneController : MonoBehaviour
 
     private void Start()
     {
-        SceneCreator.CreateScene(Levels.Level1);
+        LevelTubeData = SceneCreator.CreateScene(Levels.Level1);
         UITileScroll.Set(Levels.GetTilesData(Levels.Level1Tubes));
         Timer.Set(120f, 0.1f);
     }

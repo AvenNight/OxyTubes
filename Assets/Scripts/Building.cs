@@ -6,6 +6,7 @@ public class Building : Tile
 
     public void Set(TileType type, TubeData data)
     {
+        Data = data;
         TileType = type;
 
         switch (type)
