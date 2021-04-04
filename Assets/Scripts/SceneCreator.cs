@@ -57,8 +57,7 @@ public class SceneCreator : MonoBehaviour
         {
             var obj = SceneController.Instance.UITileScroll.transform.GetChild(i).gameObject;
 
-            if (obj.TryGetComponent< TileTube >(out TileTube outtube))
-            //if (obj is TileTube)
+            if (obj.TryGetComponent<TileTube>(out TileTube outtube))
                 Destroy(outtube.gameObject);
         }
             

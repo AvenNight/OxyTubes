@@ -25,11 +25,11 @@ public class SceneController : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void OnEnable()
-    {
-        if (ArtCollection.Instance != null)
-            Start();
-    }
+    //private void OnEnable()
+    //{
+    //    if (ArtCollection.Instance != null)
+    //        Start();
+    //}
 
     private void Start()
     {
